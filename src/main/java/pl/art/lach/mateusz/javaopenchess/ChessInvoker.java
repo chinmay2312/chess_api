@@ -1,7 +1,11 @@
-package pl.art.lach.mateusz.javaopenchess.core;
+package pl.art.lach.mateusz.javaopenchess;
 
 import pl.art.lach.mateusz.javaopenchess.JChessApp;
 import pl.art.lach.mateusz.javaopenchess.JChessView;
+import pl.art.lach.mateusz.javaopenchess.core.Chessboard;
+import pl.art.lach.mateusz.javaopenchess.core.Colors;
+import pl.art.lach.mateusz.javaopenchess.core.Game;
+import pl.art.lach.mateusz.javaopenchess.core.Square;
 import pl.art.lach.mateusz.javaopenchess.core.ai.AI;
 import pl.art.lach.mateusz.javaopenchess.core.ai.AIFactory;
 import pl.art.lach.mateusz.javaopenchess.core.pieces.KingState;

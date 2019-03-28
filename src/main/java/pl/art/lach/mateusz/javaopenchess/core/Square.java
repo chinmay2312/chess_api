@@ -25,7 +25,7 @@ import pl.art.lach.mateusz.javaopenchess.core.pieces.Piece;
  */
 public class Square
 {
-    static final int ASCII_OFFSET = 97;
+    public static final int ASCII_OFFSET = 97;
     
     /**
      * X position of square 
