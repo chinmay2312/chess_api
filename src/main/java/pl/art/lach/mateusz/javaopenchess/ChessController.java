@@ -11,6 +11,7 @@ import pl.art.lach.mateusz.javaopenchess.core.ai.AI;
 import pl.art.lach.mateusz.javaopenchess.core.ai.AIFactory;
 import pl.art.lach.mateusz.javaopenchess.core.moves.Move;
 import pl.art.lach.mateusz.javaopenchess.core.pieces.KingState;
+import pl.art.lach.mateusz.javaopenchess.core.pieces.Piece;
 import pl.art.lach.mateusz.javaopenchess.core.pieces.implementation.King;
 import pl.art.lach.mateusz.javaopenchess.core.players.Player;
 import pl.art.lach.mateusz.javaopenchess.core.players.PlayerFactory;
@@ -22,11 +23,10 @@ import pl.art.lach.mateusz.javaopenchess.utils.Settings;
 @RestController
 public class ChessController// implements IChessEngine
  {
-    Game game;
-    MovePOJO mp;
-    King king;
+    private Game game;
+    private MovePOJO mp;
 
-    /*
+     /*
      *@param firstMove if true, it means controller is black and will play second
      */
     @PostMapping(path = "/new_game/{isWhite}", produces = "application/json")
@@ -105,15 +105,20 @@ public class ChessController// implements IChessEngine
        String begin = repojo.getStartSq();
        String end = repojo.getEndSq();
 
-       mp = new MovePOJO();
+        mp = new MovePOJO();
 
-       //TODO: check if valid move
        Square beginSq = getSquareFromAlgebraic(begin);
        Square endSq = getSquareFromAlgebraic(end);
+
+       if(!isValidMove(beginSq, endSq))   {
+          mp.setMessage("Bad move");
+          return mp;
+       }
 
        game.getChessboard().move(beginSq, endSq);
        game.getChessboard().unselect();
        game.nextMove();
+       King king;
        if(game.getSettings().getPlayerWhite() == game.getActivePlayer())
           king = game.getChessboard().getKingWhite();
        else
@@ -149,6 +154,15 @@ public class ChessController// implements IChessEngine
        return mp;
     }
 
+    private boolean isValidMove(Square beginSq, Square endSq) {
+
+       Piece activePiece = beginSq.getPiece();
+       if(activePiece==null)
+          return false;
+
+       return activePiece.getAllMoves().contains(endSq);
+    }
+
     //@Override
     @DeleteMapping(value = "/quit", produces = "application/json")
     public MovePOJO quit() {
@@ -161,7 +175,6 @@ public class ChessController// implements IChessEngine
     private Square getSquareFromAlgebraic(String notation)   {
        int pozX = (int)notation.charAt(0) - Square.ASCII_OFFSET;
        int pozY = Chessboard.LAST_SQUARE - Character.getNumericValue(notation.charAt(1))+1;
-       Square sq = game.getChessboard().getSquare(pozX, pozY);
-       return sq;
+       return game.getChessboard().getSquare(pozX, pozY);
     }
 }

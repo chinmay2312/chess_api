@@ -324,7 +324,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         this.setBlockedChessboard(true);
         this.isEndOfGame = true;
         LOG.debug(message);
-        JOptionPane.showMessageDialog(null, message);
+        //JOptionPane.showMessageDialog(null, message);
     }
 
     /**

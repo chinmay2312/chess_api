@@ -286,7 +286,7 @@ public class Chessboard
         if (null != end.piece)
         {
             takenPiece = end.piece;
-            System.out.println(takenPiece.getPlayer().getName()+"'s "+takenPiece.getName()+" was taken by "+begin.piece.getPlayer().getName()+"'s "+begin.piece.getName()+" at "+end.getAlgebraicNotation());
+            //System.out.println(takenPiece.getPlayer().getName()+"'s "+takenPiece.getName()+" was taken by "+begin.piece.getPlayer().getName()+"'s "+begin.piece.getName()+" at "+end.getAlgebraicNotation());
             end.getPiece().setSquare(null);
         }
 
