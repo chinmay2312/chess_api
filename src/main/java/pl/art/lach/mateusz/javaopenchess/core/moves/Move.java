@@ -80,7 +80,7 @@ public class Move
         for(int traceLevel = 1;traceLevel<Math.min(11, stackTraceElements.length);traceLevel++)
             System.out.println(stackTraceElements[traceLevel]);
         *///System.out.println(Arrays.toString(Thread.currentThread().getStackTrace()));
-        System.out.println(movedPiece.getPlayer().getName()+" moved "+ movedPiece.getName() +" from "+ from.getAlgebraicNotation() +" to "+to.getAlgebraicNotation());
+        //System.out.println(movedPiece.getPlayer().getName()+" moved "+ movedPiece.getName() +" from "+ from.getAlgebraicNotation() +" to "+to.getAlgebraicNotation());
 
         if (Pawn.class == movedPiece.getClass() 
                 && Math.abs(to.getPozY() - from.getPozY()) == 2)

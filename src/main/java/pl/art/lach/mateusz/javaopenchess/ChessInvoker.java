@@ -102,6 +102,9 @@ public class ChessInvoker {
         currGame.endGame(currGame.getActivePlayer().getName()+" loses");
     }
 
+    /*
+    *@param notation Chessboard square in algebraic form Eg. a1, e8, etc
+     */
     private static Square getSquareFromAlgebraic(Game g, String notation)   {
         int pozX = (int)notation.charAt(0) - Square.ASCII_OFFSET;
         int pozY = Chessboard.LAST_SQUARE - Character.getNumericValue(notation.charAt(1))+1;
@@ -110,21 +113,23 @@ public class ChessInvoker {
         return sq;
     }
 
-    private static Game beginGame(String playerName1, char color) {
+    static Game beginGame(String playerName1, char color) {
         //JChessView jChessView = JChessApp.getJavaChessView();
         //Object target = e.getSource();
-        /*if (target == oponentComp)
-        {
-            computerLevel.setEnabled(true);
-            secondName.setEnabled(false);
-        }
-        else if (target == this.oponentHuman)
-        {
-            this.computerLevel.setEnabled(false);
-            this.secondName.setEnabled(true);
-        }
-        else if (target == this.okButton)
-        {*/
+        /*
+            if (target == oponentComp)
+            {
+                computerLevel.setEnabled(true);
+                secondName.setEnabled(false);
+            }
+            else if (target == this.oponentHuman)
+            {
+                this.computerLevel.setEnabled(false);
+                this.secondName.setEnabled(true);
+            }
+            else if (target == this.okButton)
+            {
+        */
                 //this.firstName.setText(this.trimString(firstName, 9));
                 playerName1 = playerName1.substring(0, Math.min(9, playerName1.length()));
 
