@@ -156,6 +156,8 @@ public class ChessController implements IChessEngine
 
     private boolean isValidMove(Square beginSq, Square endSq) {
 
+       //TODO: verify if client owns moved piece
+
        Piece activePiece = beginSq.getPiece();
        if(activePiece==null)
           return false;
