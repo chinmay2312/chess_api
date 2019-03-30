@@ -21,7 +21,7 @@ import pl.art.lach.mateusz.javaopenchess.utils.GameTypes;
 import pl.art.lach.mateusz.javaopenchess.utils.Settings;
 
 @RestController
-public class ChessController// implements IChessEngine
+public class ChessController implements IChessEngine
  {
     private Game game;
     private MovePOJO mp;
