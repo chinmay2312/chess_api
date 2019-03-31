@@ -21,7 +21,6 @@ import java.util.MissingResourceException;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
-import pl.art.lach.mateusz.javaopenchess.JChessApp;
 import pl.art.lach.mateusz.javaopenchess.core.Colors;
 import pl.art.lach.mateusz.javaopenchess.core.players.Player;
 import pl.art.lach.mateusz.javaopenchess.core.players.PlayerType;
@@ -44,8 +43,8 @@ public class Settings implements Serializable
     
     static 
     {
-        loc = PropertyResourceBundle
-                .getBundle(JChessApp.MAIN_PACKAGE_NAME + RESOURCES_I18N_MAIN);
+        //loc = PropertyResourceBundle
+        // .getBundle(JChessApp.MAIN_PACKAGE_NAME + RESOURCES_I18N_MAIN);
         Locale.setDefault(Locale.ENGLISH);
     }
     
@@ -241,8 +240,8 @@ public class Settings implements Serializable
 
     public static String lang(String key)
     {
-        String result;
-        try
+        String result=key;
+        /*try
         {
             result = Settings.loc.getString(key);
         }
@@ -251,7 +250,7 @@ public class Settings implements Serializable
             LOG.error(exc.getStackTrace());
             result = key;
         }
-        LOG.debug("Locale: " + Settings.loc.getLocale().toString());
+        LOG.debug("Locale: " + Settings.loc.getLocale().toString());*/
         return result;
     }
 }

@@ -20,7 +20,6 @@
 package pl.art.lach.mateusz.javaopenchess.network;
 
 import java.awt.HeadlessException;
-import pl.art.lach.mateusz.javaopenchess.JChessApp;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -28,9 +27,8 @@ import java.net.ConnectException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import javax.swing.JOptionPane;
-import javax.swing.JTabbedPane;
 import pl.art.lach.mateusz.javaopenchess.core.Game;
-import pl.art.lach.mateusz.javaopenchess.display.windows.JChessTabbedPane;
+import pl.art.lach.mateusz.javaopenchess.network.Chat;
 import pl.art.lach.mateusz.javaopenchess.utils.Settings;
 import pl.art.lach.mateusz.javaopenchess.server.ConnectionInfo;
 import org.apache.log4j.*;
@@ -256,10 +254,10 @@ public class Client implements Runnable
         int endY = getInput().readInt();
         String promoted = getInput().readUTF();
         getGame().simulateMove(beginX, beginY, endX, endY, promoted);
-        int tabNumber = JChessApp.getJavaChessView().getTabNumber(getGame());
-        JTabbedPane gamesPane = JChessApp.getJavaChessView().getGamesPane();
-        gamesPane.setForegroundAt(tabNumber, JChessTabbedPane.EVENT_COLOR);
-        gamesPane.repaint();
+        //int tabNumber = JChessApp.getJavaChessView().getTabNumber(getGame());
+        //JTabbedPane gamesPane = JChessApp.getJavaChessView().getGamesPane();
+        //gamesPane.setForegroundAt(tabNumber, JChessTabbedPane.EVENT_COLOR);
+        //gamesPane.repaint();
     }
 
     private void handleGetSettingsFromServer() throws IOException

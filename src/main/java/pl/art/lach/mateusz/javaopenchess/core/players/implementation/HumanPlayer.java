@@ -14,7 +14,6 @@
  */
 package pl.art.lach.mateusz.javaopenchess.core.players.implementation;
 
-import pl.art.lach.mateusz.javaopenchess.JChessApp;
 import pl.art.lach.mateusz.javaopenchess.core.Chessboard;
 import pl.art.lach.mateusz.javaopenchess.core.Colors;
 import pl.art.lach.mateusz.javaopenchess.core.pieces.Piece;

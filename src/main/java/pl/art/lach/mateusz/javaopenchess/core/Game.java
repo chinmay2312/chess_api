@@ -46,6 +46,7 @@ import pl.art.lach.mateusz.javaopenchess.core.pieces.implementation.King;
 import pl.art.lach.mateusz.javaopenchess.core.pieces.implementation.Pawn;
 import pl.art.lach.mateusz.javaopenchess.core.players.Player;
 import pl.art.lach.mateusz.javaopenchess.core.players.PlayerType;
+//import pl.art.lach.mateusz.javaopenchess.network.Chat;
 import pl.art.lach.mateusz.javaopenchess.network.Chat;
 import pl.art.lach.mateusz.javaopenchess.network.Client;
 import pl.art.lach.mateusz.javaopenchess.utils.GameTypes;
@@ -135,7 +136,7 @@ public class Game extends JPanel// implements ComponentListener, MouseListener
     protected final void init()
     {
         this.setLayout(null);
-        this.chat = new Chat();
+        //this.chat = new Chat();
         this.settings = SettingsFactory.getInstance();
         this.moves = new MovesHistory(this);
         //this.localSettingsView = new LocalSettingsView(this);
@@ -747,7 +748,6 @@ public class Game extends JPanel// implements ComponentListener, MouseListener
     {
         return chat;
     }
-
     /**
      * //TODO: refactor, why I've to change settings object in 2 places!?
      * 
@@ -768,7 +768,6 @@ public class Game extends JPanel// implements ComponentListener, MouseListener
     {
         this.chat = chat;
     }
-
     /*@Override
     public void repaint()
     {

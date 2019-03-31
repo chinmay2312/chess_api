@@ -1,7 +1,5 @@
 package pl.art.lach.mateusz.javaopenchess;
 
-import pl.art.lach.mateusz.javaopenchess.JChessApp;
-import pl.art.lach.mateusz.javaopenchess.JChessView;
 import pl.art.lach.mateusz.javaopenchess.core.Chessboard;
 import pl.art.lach.mateusz.javaopenchess.core.Colors;
 import pl.art.lach.mateusz.javaopenchess.core.Game;
@@ -14,7 +12,6 @@ import pl.art.lach.mateusz.javaopenchess.core.pieces.implementation.Pawn;
 import pl.art.lach.mateusz.javaopenchess.core.players.Player;
 import pl.art.lach.mateusz.javaopenchess.core.players.PlayerFactory;
 import pl.art.lach.mateusz.javaopenchess.core.players.PlayerType;
-import pl.art.lach.mateusz.javaopenchess.display.windows.DrawLocalSettings;
 import pl.art.lach.mateusz.javaopenchess.utils.GameModes;
 import pl.art.lach.mateusz.javaopenchess.utils.GameTypes;
 import pl.art.lach.mateusz.javaopenchess.utils.Settings;
