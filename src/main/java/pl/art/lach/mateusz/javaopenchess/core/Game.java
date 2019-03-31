@@ -32,8 +32,6 @@ import javax.swing.JTextField;
 
 import org.apache.log4j.Logger;
 
-//import pl.art.lach.mateusz.javaopenchess.JChessApp;
-//import pl.art.lach.mateusz.javaopenchess.JChessView;
 import pl.art.lach.mateusz.javaopenchess.core.ai.AI;
 import pl.art.lach.mateusz.javaopenchess.core.data_transfer.DataExporter;
 import pl.art.lach.mateusz.javaopenchess.core.data_transfer.DataImporter;
@@ -48,10 +46,6 @@ import pl.art.lach.mateusz.javaopenchess.core.pieces.implementation.King;
 import pl.art.lach.mateusz.javaopenchess.core.pieces.implementation.Pawn;
 import pl.art.lach.mateusz.javaopenchess.core.players.Player;
 import pl.art.lach.mateusz.javaopenchess.core.players.PlayerType;
-//import pl.art.lach.mateusz.javaopenchess.display.panels.HistoryButtons;
-//import pl.art.lach.mateusz.javaopenchess.display.panels.LocalSettingsView;
-import pl.art.lach.mateusz.javaopenchess.display.views.chessboard.ChessboardView;
-//import pl.art.lach.mateusz.javaopenchess.display.windows.JChessTabbedPane;
 import pl.art.lach.mateusz.javaopenchess.network.Chat;
 import pl.art.lach.mateusz.javaopenchess.network.Client;
 import pl.art.lach.mateusz.javaopenchess.utils.GameTypes;
