@@ -77,7 +77,7 @@ public class PGNNotation implements DataImporter, DataExporter
           .build();
         
         importData(tempStr, game);
-        game.getChessboard().repaint();
+        //game.getChessboard().repaint();
         return game;
     }
 

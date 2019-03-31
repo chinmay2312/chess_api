@@ -89,7 +89,7 @@ public class FenNotation implements DataImporter, DataExporter
           .build();
         
         importData(data, game);
-        game.getChessboard().repaint();
+        //game.getChessboard().repaint();
         return game;
     }
     

@@ -27,8 +27,8 @@ import java.util.Set;
 import pl.art.lach.mateusz.javaopenchess.core.moves.Castling;
 import pl.art.lach.mateusz.javaopenchess.core.moves.Move;
 import pl.art.lach.mateusz.javaopenchess.core.moves.MovesHistory;
-import pl.art.lach.mateusz.javaopenchess.display.views.chessboard.implementation.graphic2D.Chessboard2D;
-import pl.art.lach.mateusz.javaopenchess.display.views.chessboard.ChessboardView;
+//import pl.art.lach.mateusz.javaopenchess.display.views.chessboard.implementation.graphic2D.Chessboard2D;
+//import pl.art.lach.mateusz.javaopenchess.display.views.chessboard.ChessboardView;
 import pl.art.lach.mateusz.javaopenchess.utils.Settings;
 import org.apache.log4j.*;
 import pl.art.lach.mateusz.javaopenchess.utils.GameTypes;
@@ -84,7 +84,7 @@ public class Chessboard
     /**
      * chessboard view data object
      */  
-    private ChessboardView chessboardView;
+    //private ChessboardView chessboardView;
     
     private int halfCounter = 0;
     
@@ -102,7 +102,7 @@ public class Chessboard
     public Chessboard(Settings settings, MovesHistory moves)
     {
         this.settings = settings;
-        this.chessboardView = new Chessboard2D(this);
+        //this.chessboardView = new Chessboard2D(this);
 
         this.activeSquareX = 0;
         this.activeSquareY = 0;
@@ -119,11 +119,11 @@ public class Chessboard
         this.movesObject = moves;
     }/*--endOf-Chessboard--*/
     
-    public Chessboard(Settings settings, MovesHistory moves, ChessboardView chessboardView)
+    /*public Chessboard(Settings settings, MovesHistory moves, ChessboardView chessboardView)
     {
         this(settings, moves);
         this.chessboardView = chessboardView;
-    }
+    }*/
 
     /**
      * @return the top
@@ -219,7 +219,7 @@ public class Chessboard
         LOG.debug(String.format("active_x: %s active_y: %s",
             this.getActiveSquareX(), this.getActiveSquareY()
         ));
-        this.getChessboardView().repaint();
+        //this.getChessboardView().repaint();
     }/*--endOf-select--*/
 
     public void unselect()
@@ -228,7 +228,7 @@ public class Chessboard
         this.setActiveSquareY(0);
         this.setActiveSquare(null);
 
-        this.getChessboardView().unselect();
+        //this.getChessboardView().unselect();
     }/*--endOf-unselect--*/
         
     public void resetActiveSquare() 
@@ -322,7 +322,7 @@ public class Chessboard
         if (refresh)
         {
             this.unselect();//unselect square
-            repaint();
+            //repaint();
         }
         
         handleHalfMoveCounter(end, takenPiece);
@@ -541,7 +541,7 @@ public class Chessboard
             if (refresh)
             {
                 this.unselect();//unselect square
-                repaint();
+                //repaint();
             }
             if (0 < halfCounter)
             {
@@ -718,15 +718,15 @@ public class Chessboard
     /**
      * @return the chessboardView
      */
-    public ChessboardView getChessboardView()
+    /*public ChessboardView getChessboardView()
     {
         return chessboardView;
-    }
+    }*/
 
     /**
      * @param chessboardView the chessboardView to set
      */
-    public void setChessboardView(ChessboardView chessboardView)
+    /*public void setChessboardView(ChessboardView chessboardView)
     {
         this.chessboardView = chessboardView;
     }
@@ -735,7 +735,7 @@ public class Chessboard
     {
         getChessboardView().repaint();
     }
-
+*/
     /**
      * @return the settings
      */

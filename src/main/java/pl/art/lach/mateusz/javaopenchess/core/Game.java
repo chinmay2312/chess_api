@@ -32,8 +32,8 @@ import javax.swing.JTextField;
 
 import org.apache.log4j.Logger;
 
-import pl.art.lach.mateusz.javaopenchess.JChessApp;
-import pl.art.lach.mateusz.javaopenchess.JChessView;
+//import pl.art.lach.mateusz.javaopenchess.JChessApp;
+//import pl.art.lach.mateusz.javaopenchess.JChessView;
 import pl.art.lach.mateusz.javaopenchess.core.ai.AI;
 import pl.art.lach.mateusz.javaopenchess.core.data_transfer.DataExporter;
 import pl.art.lach.mateusz.javaopenchess.core.data_transfer.DataImporter;
@@ -48,10 +48,10 @@ import pl.art.lach.mateusz.javaopenchess.core.pieces.implementation.King;
 import pl.art.lach.mateusz.javaopenchess.core.pieces.implementation.Pawn;
 import pl.art.lach.mateusz.javaopenchess.core.players.Player;
 import pl.art.lach.mateusz.javaopenchess.core.players.PlayerType;
-import pl.art.lach.mateusz.javaopenchess.display.panels.HistoryButtons;
-import pl.art.lach.mateusz.javaopenchess.display.panels.LocalSettingsView;
+//import pl.art.lach.mateusz.javaopenchess.display.panels.HistoryButtons;
+//import pl.art.lach.mateusz.javaopenchess.display.panels.LocalSettingsView;
 import pl.art.lach.mateusz.javaopenchess.display.views.chessboard.ChessboardView;
-import pl.art.lach.mateusz.javaopenchess.display.windows.JChessTabbedPane;
+//import pl.art.lach.mateusz.javaopenchess.display.windows.JChessTabbedPane;
 import pl.art.lach.mateusz.javaopenchess.network.Chat;
 import pl.art.lach.mateusz.javaopenchess.network.Client;
 import pl.art.lach.mateusz.javaopenchess.utils.GameTypes;
@@ -66,7 +66,7 @@ import pl.art.lach.mateusz.javaopenchess.utils.SettingsFactory;
  * @author: Mateusz Slawomir Lach ( matlak, msl )
  * @author: Damian Marciniak
  */
-public class Game extends JPanel implements ComponentListener, MouseListener
+public class Game extends JPanel// implements ComponentListener, MouseListener
 {
 
     private static final double FIELD_MARGIN = 0.20;
@@ -125,13 +125,13 @@ public class Game extends JPanel implements ComponentListener, MouseListener
 
     protected JTextField fenState;
 
-    protected LocalSettingsView localSettingsView;
+    //protected LocalSettingsView localSettingsView;
 
     private AI ai = null;
 
     private boolean isEndOfGame = false;
 
-    private HistoryButtons historyButtons;
+    //private HistoryButtons historyButtons;
 
     public Game()
     {
@@ -144,42 +144,42 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         this.chat = new Chat();
         this.settings = SettingsFactory.getInstance();
         this.moves = new MovesHistory(this);
-        this.localSettingsView = new LocalSettingsView(this);
+        //this.localSettingsView = new LocalSettingsView(this);
         this.chessboard = new Chessboard(this.getSettings(), this.moves);
 
-        int chessboardWidth = initChessboardView();
+        //int chessboardWidth = initChessboardView();
         initGameClock();
         initMovesHistory();
 
-        initTabPane(chessboardWidth);
-        initFenState(chessboardWidth);
-        initHistoryButtons();
+        //initTabPane(chessboardWidth);
+        //initFenState(chessboardWidth);
+        //initHistoryButtons();
 
         this.setBlockedChessboard(false);
         this.setLayout(null);
         this.setDoubleBuffered(true);
-        this.addComponentListener(this);
+        //this.addComponentListener(this);
 
         //StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         //for(int traceLevel = 1;traceLevel<=Math.min(9, stackTraceElements.length);traceLevel++)
         //    System.out.println(stackTraceElements[traceLevel]);
     }
 
-    private void initHistoryButtons()
+    /*private void initHistoryButtons()
     {
         this.historyButtons = new HistoryButtons(this);
         this.historyButtons.setSize(210, 40);
         this.add(this.historyButtons);
-    }
+    }*/
 
-    private int initChessboardView()
+    /*private int initChessboardView()
     {
         ChessboardView chessboardView = chessboard.getChessboardView();
         int chessboardWidth = chessboardView.getChessboardWidht(true);
         this.add(chessboardView);
         chessboardView.addMouseListener(this);
         return chessboardWidth;
-    }
+    }*/
 
     private void initMovesHistory()
     {
@@ -206,7 +206,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         this.add(fenState);
     }
 
-    private void initTabPane(int chessboardWidth)
+    /*private void initTabPane(int chessboardWidth)
     {
         this.tabPane = new JTabbedPane();
         this.tabPane.addTab(Settings.lang("game_chat"), this.chat);
@@ -215,11 +215,11 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         this.tabPane.setLocation(new Point(chessboardWidth, chessboardWidth / 2));
         this.tabPane.setMinimumSize(new Dimension(400, 100));
         this.add(tabPane);
-    }
+    }*/
 
     public final void updateFenStateText()
     {
-        this.fenState.setText(FEN_PREFIX_NAME + this.exportGame(fenExporter));
+        //this.fenState.setText(FEN_PREFIX_NAME + this.exportGame(fenExporter));
     }
 
     /**
@@ -291,7 +291,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
      * 
      * @throws ArrayIndexOutOfBoundsException
      */
-    private void runRenderingArtifactDirtyFix() throws ArrayIndexOutOfBoundsException
+    /*private void runRenderingArtifactDirtyFix() throws ArrayIndexOutOfBoundsException
     {
         JChessView jChessView = JChessApp.getJavaChessView();
         if (null != jChessView)
@@ -311,7 +311,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
             chessboard.repaint();
             this.repaint();
         }
-    }
+    }*/
 
     /**
      * Method to end game
@@ -423,9 +423,9 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         }
     }
 
-    @Override
+    /*@Override
     public void mouseClicked(MouseEvent arg0)    {
-    }
+    }*/
 
     public boolean undo()
     {
@@ -439,7 +439,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
                 this.switchActivePlayer();
             } else
             {
-                getChessboard().repaint();
+                //getChessboard().repaint();
             }
             if (this.getSettings().isGameVersusComputer())
             {
@@ -503,7 +503,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
                 this.nextMove();
             } else
             {
-                getChessboard().repaint();
+                //getChessboard().repaint();
             }
         } else
         {
@@ -513,7 +513,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         return status;
     }
 
-    @Override
+    /*@Override
     public void mousePressed(MouseEvent event)
     {
         if (event.getButton() == MouseEvent.BUTTON3) // right button
@@ -533,9 +533,9 @@ public class Game extends JPanel implements ComponentListener, MouseListener
             }
         }
         updateFenStateText();
-    }
+    }*/
 
-    private void moveActionInvoked(MouseEvent event) throws ArrayIndexOutOfBoundsException
+    /*private void moveActionInvoked(MouseEvent event) throws ArrayIndexOutOfBoundsException
     {
         try
         {
@@ -560,16 +560,16 @@ public class Game extends JPanel implements ComponentListener, MouseListener
             if (canDoComputerMove())
             {
                 doComputerMove();
-                highlighTabIfInactive();
+                //highlighTabIfInactive();
             }
 
         } catch (NullPointerException exc)
         {
             LOG.error("NullPointerException: " + exc.getMessage(), exc);
-            getChessboard().repaint();
+            //getChessboard().repaint();
         }
         updateFenStateText();
-    }
+    }*/
 
     private boolean isUnselect(Square sq)
     {
@@ -652,7 +652,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
                 null == promoted ? "" : promoted.getName());
     }
 
-    private void highlighTabIfInactive() throws ArrayIndexOutOfBoundsException
+    /*private void highlighTabIfInactive() throws ArrayIndexOutOfBoundsException
     {
         JChessView jChessView = JChessApp.getJavaChessView();
         int tabNumber = jChessView.getTabNumber(this);
@@ -660,7 +660,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         {
             jChessView.getGamesPane().setForegroundAt(tabNumber, JChessTabbedPane.EVENT_COLOR);
         }
-    }
+    }*/
 
     private boolean canDoComputerMove()
     {
@@ -680,7 +680,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         this.nextMove();
     }
 
-    @Override
+   /* @Override
     public void mouseReleased(MouseEvent arg0)
     {
     }
@@ -693,15 +693,15 @@ public class Game extends JPanel implements ComponentListener, MouseListener
     @Override
     public void mouseExited(MouseEvent arg0)
     {
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void componentResized(ComponentEvent e)
     {
         resizeGame();
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void componentMoved(ComponentEvent e)
     {
         componentResized(e);
@@ -717,7 +717,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
     @Override
     public void componentHidden(ComponentEvent e)
     {
-    }
+    }*/
 
     public Chessboard getChessboard()
     {
@@ -775,7 +775,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         this.chat = chat;
     }
 
-    @Override
+    /*@Override
     public void repaint()
     {
         super.repaint();
@@ -795,9 +795,9 @@ public class Game extends JPanel implements ComponentListener, MouseListener
         {
             this.historyButtons.repaint();
         }
-    }
+    }*/
 
-    public void resizeGame()
+    /*public void resizeGame()
     {
         int height = this.getHeight() >= this.getWidth() ? this.getWidth() : this.getHeight();
         int chessHeight = (int) (calculateChessHeight(height));
@@ -822,7 +822,7 @@ public class Game extends JPanel implements ComponentListener, MouseListener
             tabPane.repaint();
         }
     }
-
+*/
     private static long calculateChessHeight(int height)
     {
         return Math.round((height - (height * FIELD_MARGIN)) / Chessboard.NUMBER_OF_SQUARES)
